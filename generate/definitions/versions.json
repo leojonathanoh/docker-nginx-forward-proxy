@@ -1,11 +1,11 @@
 {
   "nginx": {
     "versions": [
-      "1.25.3",
+      "1.25.5",
       "1.24.0",
       "1.23.4"
     ],
     "versionsChangeScope": "minor",
-    "versionsNewScript": "Invoke-WebRequest https://nginx.org/download/ | Select-Object -Property Content | % { $_ -split \"`n\" } | % { if ($_ -match '>nginx-(\\d+\\.\\d+\\.\\d+).tar\\.gz<') { $matches[1] } } | Sort-Object { [version]$_ } -Descending | ? { $v = [version]$_; $v.Major -eq 1 -and $v.Minor -ge 23 }"
+    "versionsNewScript": "Invoke-WebRequest https://nginx.org/download/ | Select-Object -Property Content | % { $_ -split \"`n\" } | % { if ($_ -match '>nginx-(\\d+\\.\\d+\\.\\d+).tar\\.gz<') { $matches[1] } } | Sort-Object { [version]$_ } -Descending | ? { [version]$_ -ge [version]'1.23' -and [version]$_ -lt [version]'1.26' }"
   }
 }

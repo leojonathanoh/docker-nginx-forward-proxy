@@ -12,7 +12,7 @@ You can easily build a HTTP proxy server using this.
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:1.25.3`, `:latest` | [View](variants/1.25.3) |
+| `:1.25.5`, `:latest` | [View](variants/1.25.5) |
 | `:1.24.0` | [View](variants/1.24.0) |
 | `:1.23.4` | [View](variants/1.23.4) |
 
