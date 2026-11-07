@@ -1,5 +1,5 @@
 @"
-FROM alpine:3.17
+FROM alpine:3.24
 LABEL maintainer "Takahiro INOUE <github.com/hinata>, The Oh Brothers <github.com/theohbrothers>"
 
 ENV NGINX_VERSION $( $_['_metadata']['package_version'] )
