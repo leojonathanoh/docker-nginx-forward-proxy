@@ -14,7 +14,6 @@ RUN set -eux; \
     cd nginx-`$NGINX_VERSION; \
     \
     git clone https://github.com/chobits/ngx_http_proxy_connect_module; \
-    \
     patch -p1 < ./ngx_http_proxy_connect_module/patch/proxy_connect_rewrite_102101.patch; \
     ./configure \
       --add-module=./ngx_http_proxy_connect_module \
@@ -22,9 +21,7 @@ RUN set -eux; \
       --with-cc-opt='-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC'; \
     make -j `$(nproc); \
     make install; \
-    apk add --no-cache openssl-dev pcre-dev zlib-dev; \
     nginx -v; \
-    \
     rm -rf /tmp/*; \
     apk del alpine-sdk
 
