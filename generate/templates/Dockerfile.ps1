@@ -2,6 +2,8 @@
 FROM alpine:3.24
 LABEL maintainer "Takahiro INOUE <github.com/hinata>, The Oh Brothers <github.com/theohbrothers>"
 
+RUN apk add --no-cache ca-certificates
+
 ENV NGINX_VERSION $( $_['_metadata']['package_version'] )
 
 RUN set -eux; \
